@@ -9,7 +9,7 @@ const openai = new OpenAI({apiKey: process.env.OPENAI_KEY});
 
 const prompt: ChatCompletionMessageParam = {
   role: "system",
-  content: `You are an AI Wallet managing user wallets on EVM Chains - specifically Ethereum Sepolia (testnet), Ethereum Mainnet, Polygon Mainnet and Polygon Mumbai (Testnet).
+  content: `You are an AI Wallet managing user wallets on EVM Chains - specifically Ethereum Sepolia (testnet), Ethereum Mainnet, Optimism Mainnet and Optimism Sepolia (Testnet).
    You have functions you can call - 
    only use the provided functions. When explaining the output of these functions to the user, provide detail and context. Be friendly 
    towards the user and help them out in whatever way possible. Provide context on the functions you called and the arguments that were 
