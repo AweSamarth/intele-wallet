@@ -37,17 +37,23 @@ export const getWalletBalance = async ({
     for (const network of Object.keys(
       SUPPORTED_CHAINS[chain as SupportedChain]
     )) {
+
+
       const chainInfo =
         SUPPORTED_CHAINS[chain as SupportedChain][
           network as "testnet" | "mainnet"
         ];
+
+        console.log("chain info is here:", chainInfo)
       const provider = new ethers.JsonRpcProvider(chainInfo.rpcUrl);
       let balance: BigNumberish;  
       if (address) {
         balance = await provider.getBalance(address);
       } else {
+        console.log("getting wallet from telegram user id")
         const wallet = await getWalletFromTelegramUserId(telegramUserId);
         const connectedWallet = wallet.connect(provider);
+        console.log("connected wallet address is: ", connectedWallet.address)
         balance = await provider.getBalance(connectedWallet.address);
       }
       const humanReadableBalance = formatEther(balance);

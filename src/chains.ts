@@ -1,4 +1,4 @@
-export type SupportedChain = "ethereum" | "optimism";
+export type SupportedChain = "ethereum";
 
 export type ChainInformation = {
   testnet: NetworkInformation;
@@ -27,18 +27,5 @@ export const SUPPORTED_CHAINS: Record<SupportedChain, ChainInformation> = {
       chainId: "1",
     },
   },
-  optimism: {
-    testnet: {
-      name: "Optimism Sepolia",
-      tokenName: "ETH",
-      rpcUrl: "https://endpoints.omniatech.io/v1/op/sepolia/public",
-      chainId: "11155420",
-    },
-    mainnet: {
-      name: "Optimism Mainnet",
-      tokenName: "ETH",
-      rpcUrl: "https://rpc.ankr.com/polygon",
-      chainId: "137",
-    },
-  },
+  
 };
